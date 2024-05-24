@@ -1,0 +1,3 @@
+The goal of this project was to design an LQR state-feedback controller and to fine tune it to minimize root-mean-square error between the state and the state estimate. This controller and observer design were then implemented into the drone's built-in firmware to overwrite the default system.
+For the final part of this project, my group elected to implement and extended Kalman filter into the drone and overwrite the built-in filter. We then taught ourselves filtering theory and a little bit of C needed to implement it into the drone's firmware.
+The results will be tabulated in the following files.
