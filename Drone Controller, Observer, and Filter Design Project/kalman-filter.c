@@ -210,36 +210,3 @@ void controllerAE483(control_t *control,
       v_x = x[6][0];
       v_y = x[7][0];
       v_z =x[8][0];
-
-      tau_x = 0.00303466f * (o_y - o_y_des) -0.00307415f * phi + 0.00141493f * v_y -0.00037938f * w_x;
-      tau_y = -0.00341735f * (o_x - o_x_des) -0.00641297f * theta -0.00214120f * v_x -0.00100975f * w_y;
-      tau_z = -0.00052902f * psi -0.00022111f * w_z;
-      f_z = -0.47852401f * (o_z - o_z_des) -0.17814013f * v_z + 0.31019220f;
-
-      tau_x = 0.00063277f * (o_y - o_y_des) -0.00368826f * phi + 0.00093606f * v_y -0.00073120f * w_x;
-      tau_y = -0.00068347f * (o_x - o_x_des) -0.00398028f * theta -0.00101082f * v_x -0.00078839f * w_y;
-      tau_z = -0.00013659f * psi -0.00016561f * w_z;
-      f_z = -0.12789092f * (o_z - o_z_des) -0.15634548f * v_z + 0.31019220f;
-
-      tau_x = 0.00002001f * (o_y - o_y_des) -0.00026050f * phi + 0.00003825f * v_y -0.00009941f * w_x;
-      tau_y = -0.00002161f * (o_x - o_x_des) -0.00027992f * theta -0.00004124f * v_x -0.00010643f * w_y;
-      tau_z = -0.00000432f * psi -0.00001720f * w_z;
-      f_z = -0.00404427f * (o_z - o_z_des) -0.01649592f * v_z + 0.31019220f;
-
-      tau_x = 0.00000200f * (o_y - o_y_des) -0.00007070f * phi + 0.00000573f * v_y -0.00005077f * w_x;
-      tau_y = -0.00000216f * (o_x - o_x_des) -0.00007590f * theta -0.00000617f * v_x -0.00005431f * w_y;
-      tau_z = -0.00000043f * psi -0.00000528f * w_z;
-      f_z = -0.00040443f * (o_z - o_z_des) -0.00507341f * v_z + 0.31019220f;
-
-      u[0][0] = tau_x; // UPDATE FOR KF
-      u[1][0] = tau_y;
-      u[2][0] = tau_z;
-      u[3][0] = f_z;
-
-        // FIXME
-      m_1 = limitUint16( -3937708.6f * tau_x -3937708.6f * tau_y -48262548.3f * tau_z + 126262.6f * f_z );
-      m_2 = limitUint16( -3937708.6f * tau_x + 3937708.6f * tau_y + 48262548.3f * tau_z + 126262.6f * f_z );
-      m_3 = limitUint16( 3937708.6f * tau_x + 3937708.6f * tau_y -48262548.3f * tau_z + 126262.6f * f_z );
-      m_4 = limitUint16( 3937708.6f * tau_x -3937708.6f * tau_y + 48262548.3f * tau_z + 126262.6f * f_z );
-      // Apply motor power commands
-      powerSet(m_1, m_2, m_3, m_4);
