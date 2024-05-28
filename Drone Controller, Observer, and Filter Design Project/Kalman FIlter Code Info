@@ -1,2 +1,2 @@
-The c file is an excerpt from the larger file in which our extended Kalman Filter was implemented. The code in the attached file is the Kalman filter code along with code written to implement matrix multiplication with all of the code written by our professor excluded.
+The c file is an excerpt from the larger file in which our extended Kalman Filter was implemented. The code in the attached file is the Kalman filter code with all of the code written by our professor excluded.
 This file was implemented into the drone's firmware and served to overwrite the built-in Kalman filter.
