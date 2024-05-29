@@ -1,0 +1,7 @@
+This file shows a table of root-mean-square error values for different types of flight. The details of them are as follows:
+The first set of values is a test flight using the controller and observer that we designed as well as the built-in Kalman Filter.
+The second set of values is a test flight using the controller, observer, and Kalman filter that we designed.
+The third set of values is a test flight using the built-in controller and observer as well as the Kalman Filter we designed.
+
+The greatest performance was seen when running our Kalman filter with the default controller and observer and this is likely due to a variety of additional functions built into the default controller/observer that we did not have access to during our design.
+In addition, there were some functions in the built-in Kalman filter that were not able to be utilized in our Kalman filter design for the same reason.
